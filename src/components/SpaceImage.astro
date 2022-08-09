@@ -1,0 +1,25 @@
+---
+import type { SpaceImage } from '../pages/index.astro';
+
+type Props = SpaceImage;
+const { media_type, url, explanation } = Astro.props as Props;
+---
+
+<figure>
+  {media_type === 'image' ? (
+    <img class="media" src={url} alt={explanation} />
+  ) : (
+    <iframe class="media" width="500" height="300" src={url}></iframe>
+  )}
+  <figcaption>{explanation}</figcaption>
+</figure>
+
+<style>
+  figure {
+    background: var(--grey-1);
+    border: 2px solid var(--grey-2);
+    box-shadow: var(--box-shadow-glow);
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+</style>
