@@ -1,5 +1,6 @@
 <script lang="ts">
 import { fly } from 'svelte/transition';
+import Image from './Image.svelte';
 
 export let images: any[] = [];
 
@@ -29,19 +30,11 @@ function previous() {
 <div class="images">
   {#each images as image, idx}
   {#if idx === currentIdx}
-  <figure transition:fly={{ y: 30 }}>
-    {#if image.media_type === 'image'}
-      <img class="media" src={image.url} alt={image.explanation} />
-    {:else}
-      <iframe class="media" title={image.title} width="500" height="300" src={image.url}></iframe>
-    {/if}
-    <figcaption>
-      <details>
-        <summary>Learn more</summary>  
-        {image.explanation}
-      </details>  
-    </figcaption>
-  </figure>
+    <div class="image-container" transition:fly={{ y: 30 }}>
+      <Image {image}>
+        <a slot="figcaption" href={`/${image.date}`}>Learn more</a>
+      </Image>
+    </div>
   {/if}
   {/each}
 </div>
@@ -58,23 +51,10 @@ function previous() {
     grid-template-columns: 3rem 1fr 3rem;
   }
 
-  figure {
-    background: var(--grey-1);
-    border: 2px solid var(--grey-2);
-    box-shadow: var(--box-shadow-glow);
-    padding: 1.5rem;
-    border-radius: 0.5rem;
+  .image-container {
     position: absolute;
     height: min-content;
     inset: 0;
-    margin: 0;
-  }
-
-  .media {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
   }
 
   button {
@@ -102,8 +82,9 @@ function previous() {
     font-size: var(--font-size-base);
   }
 
-  details summary {
-    color: var(--color-text-secondary);
-    margin-block: 1rem;
+  a, a:visited {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
   }
 </style>
