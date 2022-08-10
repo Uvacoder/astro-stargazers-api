@@ -2,7 +2,7 @@
 import Carousel from '../components/Carousel.svelte';
 import Layout from '../layouts/Layout.astro';
 
-export type Image = {
+type Image = {
 	title: string;
 	explanation: string;
 	media_type: 'image' | 'video';
@@ -16,10 +16,9 @@ export type Image = {
 	service_version: string;
 }
 
-// const images: SpaceImage[] = await fetch(
-// 	'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=10').then(res => res.json()
-// );
-const images = (await import('../../images.json')).default as Image[];
+const images: Image[] = await fetch(
+	'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=10'
+).then(res => res.json());
 ---
 
 <Layout title="Hey Star Gazer!">
