@@ -48,5 +48,16 @@ const { title } = Astro.props as Props;
 	body {
 		margin: 0;
 	}
+
+	a, a:visited {
+		color: var(--color-text-secondary);
+		text-decoration: none;
+		transition: background-color 0.2s;
+		border-radius: 0.2rem;
+	}
+
+	a:hover, a:focus-visible {
+		background-color: var(--grey-2);
+	}
 </style>
 
