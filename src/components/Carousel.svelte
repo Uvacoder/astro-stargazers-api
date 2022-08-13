@@ -1,8 +1,8 @@
-<script lang="ts">
+<script>
 import { fly } from 'svelte/transition';
 import Image from './Image.svelte';
 
-export let images: any[] = [];
+export let images = [];
 
 let currentIdx = 0;
 function next() {
@@ -31,7 +31,7 @@ function previous() {
   {#each images as image, idx}
   {#if idx === currentIdx}
     <div class="image-container" transition:fly={{ y: 30 }}>
-      <Image {image}>
+      <Image title={image.title} url={image.url} alt={image.explanation} media_type={image.media_type}>
         <a slot="figcaption" href={`/${image.date}`}>Learn more</a>
       </Image>
     </div>
