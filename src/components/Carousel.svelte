@@ -41,8 +41,7 @@ function previous() {
 
 <style>
   .images {
-    display: flex;
-		position: relative;
+    display: grid;
     width: 100%;
 	}
 
@@ -52,9 +51,7 @@ function previous() {
   }
 
   .image-container {
-    position: absolute;
-    height: min-content;
-    inset: 0;
+    grid-area: 1 / -1;
   }
 
   button {
