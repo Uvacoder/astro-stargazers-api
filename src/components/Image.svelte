@@ -18,9 +18,13 @@
     background: var(--grey-1);
     border: 2px solid var(--grey-2);
     box-shadow: var(--box-shadow-glow);
-    padding: 1.5rem;
     border-radius: 0.5rem;
     margin: 0;
+    padding-bottom: 1rem;
+  }
+
+  figcaption {
+    padding-inline: 1rem;
   }
 
   .media {
@@ -28,5 +32,7 @@
     height: auto;
     aspect-ratio: 16 / 10;
     object-fit: cover;
+    border-radius: inherit;
+    border: none;
   }
 </style>
