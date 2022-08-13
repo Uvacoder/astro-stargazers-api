@@ -12,7 +12,7 @@ const image = await fetch(
 <Layout title={image.title}>
   <main>
     <h1>{image.title}</h1>
-    <Image image={image}>
+    <Image title={image.title} url={image.url} alt={image.explanation} media_type={image.media_type}>
       <p slot="figcaption">
         {image.explanation}
       </p>
