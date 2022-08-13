@@ -6,9 +6,11 @@
   {#if image.media_type === 'image'}
     <img class="media" src={image.url} alt={image.explanation} />
   {:else}
+    <!--for videos and other media, embed with an iframe-->
     <iframe class="media" title={image.title} width="500" height="300" src={image.url}></iframe>
   {/if}
   <figcaption>
+    <!--slot extra information like a "learn more" link or image description-->
     <slot name="figcaption" /> 
   </figcaption>
 </figure>
