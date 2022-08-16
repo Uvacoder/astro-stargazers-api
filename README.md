@@ -1,6 +1,6 @@
 # Welcome to [Astro](https://astro.build) Stargazers ⭐️
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/bholmesdev/stargazers.club/tree/main)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/bholmesdev/stargazers.club/tree/starter)
 
 ## 🚀 Project Structure
 
