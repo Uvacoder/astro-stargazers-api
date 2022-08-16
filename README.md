@@ -1,8 +1,6 @@
-# Welcome to [Astro](https://astro.build)
+# Welcome to [Astro](https://astro.build) Stargazers ⭐️
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/bholmesdev/stargazers.club/tree/main)
 
 ## 🚀 Project Structure
 
@@ -14,6 +12,9 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── favicon.ico
 ├── src/
 │   ├── components/
+│   │   └── Image.svelte
+│   │   └── Carousel.svelte
+│   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
 │       └── index.astro
