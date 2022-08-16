@@ -1,3 +1,4 @@
+<!--src/components/Image.svelte-->
 <script>
   export let title = '';
   export let url = '';
@@ -14,7 +15,7 @@
   {/if}
   <figcaption>
     <!--slot extra information like a "learn more" link or image description-->
-    <slot name="figcaption" /> 
+    <slot name="figcaption" />
   </figcaption>
 </figure>
 

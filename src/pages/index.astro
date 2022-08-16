@@ -1,30 +1,10 @@
 ---
-import Carousel from '../components/Carousel.svelte';
 import Layout from '../layouts/Layout.astro';
-
-type Image = {
-	title: string;
-	explanation: string;
-	media_type: 'image' | 'video';
-	/** Date published in YYYY-MM-DD format */
-	date: string;
-	/** Video URL or standard resolution image URL */
-	url: string;
-	/** High-res image URL (for media_type: 'image' only) */
-	hdurl?: string;
-	/** API version. Defaults to "v1" */
-	service_version: string;
-}
-
-const images: Image[] = await fetch(
-	'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=10'
-).then(res => res.json());
 ---
 
-<Layout title="Hey Star Gazer!">
+<Layout title="Welcome to Astro.">
 	<main>
 		<h1>Welcome to <span class="text-gradient">Star Gazers</span></h1>
-		<Carousel client:load images={images} />
 	</main>
 </Layout>
 
@@ -32,14 +12,31 @@ const images: Image[] = await fetch(
 	:root {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
 	}
-
 	h1 {
 		margin: 2rem 0;
 	}
-
 	main {
 		margin: auto;
 		padding: 1em;
 		max-width: 60ch;
+	}
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
 	}
 </style>
